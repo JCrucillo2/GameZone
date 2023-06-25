@@ -11,17 +11,21 @@ import PageNotFound from "./pages/PageNotFound";
 
 // layout
 import RootLayout from "./layout/RootLayout";
+import AddGame from "./components/AddGame";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
-		<Route path="/" element={<RootLayout />}>
-			<Route index element={<Home />} />
-			<Route path="contact" element={<Contact />} />
-			<Route path="about" element={<About />} />
+		<>
+			<Route path="/" element={<RootLayout />}>
+				<Route index element={<Home />} />
+				<Route path="contact" element={<Contact />} />
+				<Route path="about" element={<About />} />
+				<Route path="add" element={<AddGame />} />
+				<Route path="*" element={<PageNotFound />} />
+			</Route>
 			<Route path="login" element={<Login />} />
 			<Route path="register" element={<Register />} />
-			<Route path="*" element={<PageNotFound />} />
-		</Route>
+		</>
 	)
 );
 
